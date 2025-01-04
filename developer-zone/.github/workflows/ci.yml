@@ -1,0 +1,20 @@
+name: CI Build and Test
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+      - name: Install Django SDK dependencies
+        run: |
+          cd developer-zone/sdk/django-sdk
+          pip install -r ../../templates/django-template/requirements.txt
+      - name: Run Tests
+        run: |
+          python -m unittest discover

@@ -1,0 +1,5 @@
+name: aenzbi_flutter_sdk
+description: Aenzbi Flutter SDK for seamless integration with Aenzbi APIs.
+version: 0.1.0
+dependencies:
+  http: ^1.0.0
